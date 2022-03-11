@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 require('dotenv').config();
 
 const token = process.env.DISCORD_BOT_TOKEN;
-const prefix = '?' ;
+const prefix = '-' ;
 
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES] });
 client.commands = new Discord.Collection();
@@ -17,7 +17,7 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
 	console.log('Ready!');
-  client.user.setActivity(`?help`, { type: "LISTENING" });
+  client.user.setActivity(`-help`, { type: "LISTENING" });
 });
 
 client.on('message', message => {

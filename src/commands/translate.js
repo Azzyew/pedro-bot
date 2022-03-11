@@ -31,7 +31,11 @@ module.exports = {
                 const lastCrop = firstCrop.substring(0, firstCrop.indexOf(lastSeparator));
                 const definition = firstCrop.substring(0, lastCrop.length - stringLeftoverLength);
 
-                message.channel.send(definition);
+                if (definition.startsWith('Adicione')){
+                    message.channel.send('Gíria não encontrada 🧐');
+                } else {
+                    message.channel.send(definition);
+                }
             })
         })
     }
